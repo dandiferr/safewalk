@@ -15,7 +15,7 @@ class ViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = NSURL(string: "http://rshankar.com")
-        let request = NSURLRequest(URL: url)
+        let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
     }
 
