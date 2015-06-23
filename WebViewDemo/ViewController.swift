@@ -8,20 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController  {
+class ViewController: UIViewController, UIWebViewDelegate  {
     
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
                             
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = NSURL(string: "http://rshankar.com")
         let request = NSURLRequest(URL: url!)
+        
+        webView.delegate = self
+        
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         webView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        activityIndicator.stopAnimating()
     }
     
     @IBAction func doRefresh(AnyObject) {

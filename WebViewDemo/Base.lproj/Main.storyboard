@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIY-1B-TMz">
-                                <rect key="frame" x="0.0" y="436" width="480" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="stop" id="bFL-xo-NTS">
                                         <connections>
@@ -45,17 +45,22 @@
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igD-RW-O2X">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="436"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-pH-WJS">
+                                <rect key="frame" x="290" y="268" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Jf6-pH-WJS" firstAttribute="centerX" secondItem="LIY-1B-TMz" secondAttribute="centerX" id="1WM-QB-pBl"/>
                             <constraint firstAttribute="bottom" secondItem="LIY-1B-TMz" secondAttribute="bottom" id="2c7-JX-a08"/>
                             <constraint firstItem="igD-RW-O2X" firstAttribute="bottom" secondItem="LIY-1B-TMz" secondAttribute="top" id="FBs-CH-Jjo"/>
                             <constraint firstItem="igD-RW-O2X" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Gch-eG-1hG"/>
                             <constraint firstItem="igD-RW-O2X" firstAttribute="trailing" secondItem="LIY-1B-TMz" secondAttribute="trailing" id="Jin-m4-HH2"/>
                             <constraint firstItem="igD-RW-O2X" firstAttribute="leading" secondItem="LIY-1B-TMz" secondAttribute="leading" id="QUd-SS-Bfa"/>
+                            <constraint firstItem="Jf6-pH-WJS" firstAttribute="centerY" secondItem="igD-RW-O2X" secondAttribute="centerY" id="RUo-pQ-Sk0"/>
                             <constraint firstAttribute="trailing" secondItem="LIY-1B-TMz" secondAttribute="trailing" id="ikb-Lr-XaN"/>
                             <constraint firstItem="LIY-1B-TMz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rlg-sT-Fou"/>
                         </constraints>
@@ -63,6 +68,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Jf6-pH-WJS" id="BI2-vc-iTJ"/>
                         <outlet property="webView" destination="igD-RW-O2X" id="ozk-Oi-fJ8"/>
                     </connections>
                 </viewController>
